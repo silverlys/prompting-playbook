@@ -1,25 +1,39 @@
 # Playbook: Modern Development Best Practices
 
-## 🎯 Overview
-This guide outlines the core principles for writing maintainable, scalable, and high-quality code. These practices are language-agnostic and apply to any software project.
+## Introduction
+This playbook establishes the technical excellence standards for this repository. Its goal is to ensure that every piece of code is maintainable, scalable, and follows professional engineering principles.
 
 ---
 
-## 🟢 1. Clean Code Principles (The SOLID Foundation)
-- **S**ingle Responsibility: A class or function should have one, and only one, reason to change.
-- **D**RY (Don't Repeat Yourself): Avoid logic duplication to reduce maintenance effort.
-- **K**ISS (Keep It Simple, Stupid): Prefer simplicity over complex over-engineering.
+## 🟢 1. The Clean Code Foundation
+Writing code that "works" is not enough; it must be readable for humans.
+- **Meaningful Names:** Use intention-revealing names for variables and functions (e.g., `calculate_total_price` instead of `calc`).
+- **Function Size:** Keep functions small. If a function does more than one thing, split it.
+- **Comments Policy:** Use comments only to explain "Why" (intent), not "What" (the code should explain itself).
 
-## 🔵 2. Version Control (Git) Best Practices
-- **Atomic Commits:** Each commit should represent a single, logical change.
-- **Descriptive Messages:** Use conventional commits (e.g., `feat:`, `fix:`, `refactor:`).
-- **Branching Strategy:** Use feature branches and never push directly to `main` in collaborative environments.
+## 🔵 2. Modern Git Workflow
+A clean repository is as important as clean code.
+- **Atomic Commits:** Each commit should solve one specific thing. 
+- **Standard Messages:** Use the Conventional Commits format (`feat:`, `fix:`, `docs:`, `refactor:`).
+- **Clean History:** Avoid pushing temporary files or environment secrets (enforced by our `.gitignore`).
 
-## 🟡 3. Documentation & AI Collaboration
-- **Self-Documenting Code:** Prioritize clear variable and function names over excessive comments.
-- **Prompt Governance:** Use the patterns defined in this repository to generate consistent unit tests and documentation.
-- **README First:** Always document the purpose and setup of a new module before writing the code.
+## 🟡 3. Architectural Thinking
+Before coding, define the structure to avoid "Spaghetti Code".
+- **SoC (Separation of Concerns):** Keep your Business Logic separate from your Data Access and UI layers.
+- **SOLID Principles:** - *Single Responsibility:* One class, one purpose.
+    - *Open/Closed:* Software entities should be open for extension but closed for modification.
+- **Pattern Usage:** Always "prime" the AI with the `system-architect-pattern` before generating new modules.
 
-## 🔴 4. Testing & Quality
-- **Unit Testing:** Write small tests for individual functions to ensure they work in isolation.
-- **TDD (Test-Driven Development):** Consider writing the test before the actual code to define expected behavior clearly.
+## 🔴 4. Security & Performance
+- **Zero Trust with Secrets:** Never hardcode API keys or passwords. Use environment variables.
+- **Input Validation:** Never trust external data. Sanitize all inputs before processing.
+- **YAGNI (You Ain't Gonna Need It):** Don't build features or complex architectures until they are actually necessary.
+
+---
+
+## ✅ The "Definition of Done" (DoD)
+A development task is considered **Done** only when:
+1. The code has been refactored using the `dev-clean-code-refactor` prompt.
+2. It has been audited by the `dev-best-practices-reviewer`.
+3. The file naming convention follows the repository governance.
+4. No "Dead Code" or unused dependencies remain.
