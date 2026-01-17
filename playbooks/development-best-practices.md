@@ -37,3 +37,15 @@ A development task is considered **Done** only when:
 2. It has been audited by the `dev-best-practices-reviewer`.
 3. The file naming convention follows the repository governance.
 4. No "Dead Code" or unused dependencies remain.
+## 🧩 Practical Application: The "Sandwich" Technique
+
+To get a professional-grade audit that helps you refresh your knowledge, follow this execution sequence in your AI assistant:
+
+1. **The Foundation (Pattern):** Paste the content of `prompts/patterns/clean-code-standards-v1.0.0.md`.
+2. **The Mindset (Role):** Paste the content of `prompts/roles/developer/dev-reviewer-v1.0.0.md`.
+3. **The Subject (Code):** Provide your code snippet for review.
+
+**Why this order?**
+- The **Pattern** sets the rules (Clean Code/SOLID).
+- The **Role** sets the expertise (Senior Architect).
+- The **Code** provides the context.
