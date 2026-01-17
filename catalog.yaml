@@ -1,0 +1,110 @@
+catalog_version: 1.0.0
+name: prompting-playbook
+description: >
+  Learning-oriented prompt catalog for technical and administrative roles.
+  Designed for daily work with Microsoft 365 and AI assistants.
+
+language:
+  prompts: en
+  documentation: en
+
+audiences:
+  - technical
+  - administrative
+  - mixed
+
+maturity_levels:
+  - basic
+  - intermediate
+  - advanced
+
+roles:
+  developer:
+    description: >
+      Prompts for software development, code quality, architecture,
+      refactoring, and technical documentation.
+    target_audience: technical
+    tags: [development, architecture, cloud, devops]
+    prompt_paths:
+      - prompts/roles/developer/
+
+  tester:
+    description: >
+      Prompts for test design, test cases, quality assurance,
+      bug reporting, and coverage analysis.
+    target_audience: technical
+    tags: [qa, testing, quality]
+    prompt_paths:
+      - prompts/roles/tester/
+
+  analyst:
+    description: >
+      Prompts for business analysis, requirements definition,
+      user stories, processes, and impact analysis.
+    target_audience: mixed
+    tags: [requirements, analysis, process]
+    prompt_paths:
+      - prompts/roles/analyst/
+
+  project_lead:
+    description: >
+      Prompts for project coordination, communication,
+      reporting, planning, and stakeholder management.
+    target_audience: administrative
+    tags: [management, communication, planning]
+    prompt_paths:
+      - prompts/roles/project-lead/
+
+tools:
+  microsoft_365:
+    description: >
+      Prompts optimized for Microsoft 365 tools (Outlook, Teams, Word, etc.).
+    target_audience: mixed
+    areas: [outlook, teams, word, excel, powerpoint, onenote]
+    prompt_paths:
+      - prompts/tools/microsoft-365/
+
+  chatgpt:
+    description: >
+      General-purpose prompts optimized for conversational AI.
+    prompt_paths:
+      - prompts/tools/chatgpt/
+
+  copilot:
+    description: >
+      Prompts designed for Microsoft Copilot in productivity contexts.
+    prompt_paths:
+      - prompts/tools/copilot/
+
+  codex:
+    description: >
+      Prompts focused on code generation and refactoring.
+    prompt_paths:
+      - prompts/tools/codex/
+
+  others:
+    description: >
+      Prompts adapted for other specific AI usage patterns and internal tools.
+    prompt_paths:
+      - prompts/tools/others/
+
+patterns:
+  description: >
+    Reusable prompt patterns for common enterprise scenarios.
+  prompt_paths:
+    - prompts/patterns/
+
+playbooks:
+  description: >
+    Step-by-step guides for onboarding and AI adoption.
+  paths:
+    - playbooks/
+
+governance:
+  prompt_naming_convention: "<area>-<capability>-<scope>-vMAJOR.MINOR.PATCH.md"
+  required_sections: [Purpose, Role, Inputs, Instructions, Output Format]
+  recommended_sections: [Learning Tips, Assumptions, Examples]
+  review_policy:
+    owner_required: true
+    version_required: true
+    examples_required: true
